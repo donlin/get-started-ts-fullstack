@@ -1,9 +1,23 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Observable, of } from 'rxjs';
+import { SimpleResponse } from '../../server/shared/interfaces/simple-response';
+import { AppService } from './app.service';
+
 describe('AppComponent', () => {
+  class MockAppService {
+    healthCheck(): Observable<Object> {
+      const resp = {
+        data: 'OK'
+      };
+      return of(resp);
+    }
+  }
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent]
+      declarations: [AppComponent],
+      providers: [ { provide: AppService, useClass: MockAppService }]
     }).compileComponents();
   }));
   it('should create the app', async(() => {

@@ -2,10 +2,10 @@ import {
   Controller,
   Get,
 } from '@nestjs/common';
-import { SimpleResponse } from './shared/interfaces/simple-response';
+import { SimpleResponse } from '../shared/interfaces/simple-response';
 
 @Controller('')
-export class IndexController {
+export class HomeController {
   constructor() {}
 
   @Get()

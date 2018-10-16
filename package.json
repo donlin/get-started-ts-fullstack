@@ -10,9 +10,12 @@
     "build": "npm run build:server && npm run build:client",
     "build:client": "ng build",
     "build:server": "tsc -p ./src/server",
-    "build:prod": "ng build --prod",
-    "test": "ng test --poll=2000",
-    "test:cov": "ng test --watch=false --code-coverage --source-map",
+    "build:client:prod": "ng build --prod",
+    "test:cov": "npm run test:server:cov && npm run test:client:cov",
+    "test:client": "ng test",
+    "test:client:cov": "ng test --watch=false --code-coverage --source-map",
+    "test:server": "jest",
+    "test:server:cov": "jest --coverage",
     "lint": "ng lint"
   },
   "repository": {
@@ -57,11 +60,15 @@
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^23.3.5",
     "@types/node": "~10.3.5",
+    "@types/supertest": "^2.0.6",
     "codelyzer": "~4.3.0",
     "concurrently": "^4.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^23.6.0",
+    "jest-config": "^23.6.0",
     "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
@@ -69,9 +76,25 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "prettier": "^1.14.3",
     "protractor": "~5.4.0",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^5.2.2",
     "ts-node": "~7.0.0",
     "tsc-watch": "^1.0.30",
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src/server",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../../coverage/backend"
   }
 }
