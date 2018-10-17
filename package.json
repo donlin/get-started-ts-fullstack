@@ -16,6 +16,8 @@
     "test:client:cov": "ng test --watch=false --code-coverage --source-map",
     "test:server": "jest",
     "test:server:cov": "jest --coverage",
+    "e2e:client": "ng e2e",
+    "e2e:server": "jest --config ./e2e/server/jest-e2e.json",
     "lint": "ng lint"
   },
   "repository": {
