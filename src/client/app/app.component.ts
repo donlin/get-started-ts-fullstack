@@ -5,14 +5,14 @@ import { SimpleResponse } from '../../server/shared/interfaces/simple-response';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'angular';
   menuHidden = true;
   result;
 
-  constructor(private _appService: AppService) { }
+  constructor(private _appService: AppService) {}
 
   ngOnInit() {}
 
@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
         } else {
           this.result = 'unknown error';
         }
-    },
+      },
       () => console.log('health check was done')
-       );
+    );
   }
 }

@@ -1,7 +1,4 @@
-import {
-  Controller,
-  Get,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { SimpleResponse } from '../shared/interfaces/simple-response';
 
 @Controller('')
@@ -10,7 +7,7 @@ export class HomeController {
 
   @Get()
   async index(): Promise<any> {
-    return {data: 'hello world'};
+    return { data: 'hello world' };
   }
 
   @Get('health-check')

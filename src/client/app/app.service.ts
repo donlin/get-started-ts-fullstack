@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AppService {
-
   constructor(private http: HttpClient) {}
 
   /**
@@ -12,5 +11,4 @@ export class AppService {
   healthCheck() {
     return this.http.get('/api/health-check');
   }
-
 }

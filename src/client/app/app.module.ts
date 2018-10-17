@@ -6,16 +6,9 @@ import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-  ],
-  providers: [
-    AppService
-  ],
+  declarations: [AppComponent],
+  imports: [HttpClientModule, BrowserModule],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

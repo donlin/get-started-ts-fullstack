@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      providers: [ { provide: AppService, useClass: MockAppService }]
+      providers: [{ provide: AppService, useClass: MockAppService }]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -35,7 +35,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to angular-project-template!'
+      'Welcome to series of Get-Started - TS Fullstack App!'
     );
   }));
 });
